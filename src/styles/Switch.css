@@ -1,0 +1,30 @@
+.switch-container {
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: rgba(81, 81, 81, 0.496);
+    user-select: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.switch-container :nth-child(2) {
+    color: var(--gula-red);
+    font-size: 1.6rem;
+    font-weight: bolder;
+    cursor: default;
+}
+
+.switch-container :nth-child(1),
+.switch-container :nth-child(3) {
+    cursor: pointer;
+
+}
+
+.switch-container :nth-child(1):hover,
+.switch-container :nth-child(3):hover {
+    color: black;
+}

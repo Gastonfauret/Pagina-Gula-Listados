@@ -1,0 +1,12 @@
+.button-container {
+    display: flex;
+    align-items: center;
+}
+
+.add-button {
+    width: 40px;
+    height: 40px;
+    margin-left: -200px;
+    color: var(--gula-red)
+}
+

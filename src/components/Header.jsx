@@ -1,9 +1,9 @@
 import React from "react";
-import '../styles/Home-Page.css'
+import '../styles/Header.css'
 import logo from '../assets/Logo Gula Blanco PNG.png';
 import profile from '../assets/User-Milagros.png';
 
-function HomePage() {
+function Header() {
     return (
         <>
             <div className="HP-components-container">
@@ -22,4 +22,4 @@ function HomePage() {
         </>
     )
 }
-export default HomePage
+export default Header;
