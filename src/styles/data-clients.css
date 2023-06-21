@@ -3,13 +3,34 @@
     width: 80em;
     justify-content: center;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--gula-red); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 
 .data-clients-container tbody{
-    width: 80%;
+    width: 82%;
+    height: 65vh;
     gap: 15px;
-    margin-left: 10px;
+    margin-left: 35px;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 .data-clients-container tbody tr {

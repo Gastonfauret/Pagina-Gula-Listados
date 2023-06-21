@@ -4,7 +4,8 @@ import { AiOutlineEdit } from "react-icons/ai";
 import { AiOutlineDelete } from "react-icons/ai";
 
 function DataClients({conditional}) {
-  let [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([]);
+
 
   useEffect(() => {
     getUsers();
@@ -17,9 +18,8 @@ function DataClients({conditional}) {
         setUsers(data);
       });
   };
-
   return (
-    <>
+    <> 
     {conditional &&
       <table className="data-clients-container">
         <tbody>
@@ -37,7 +37,7 @@ function DataClients({conditional}) {
           ))}
         </tbody>
       </table>
-  }
+        }
     </>
   );
 }
