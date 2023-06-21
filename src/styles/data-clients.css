@@ -6,34 +6,33 @@
 
 .data-clients-container tbody{
     width: 80%;
-    gap: 10px;
-    margin-left: -60px;
+    gap: 15px;
+    margin-left: 10px;
     display: flex;
     flex-direction: column;
 }
 
 .data-clients-container tbody tr {
     display: flex;
-    padding-bottom: 5px;
+    padding-bottom: 4px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.16);
     align-items: center;
 }
 
 .data-clients-container tbody tr td {
     width: 90px;    
-    
 }
 
 .data-clients-container tbody tr td:nth-child(2) {
-    margin-left: 60px;
+    margin-left: 63px;
 }
 
 .data-clients-container tbody tr td:nth-child(3) {
-    margin-left: 60px;
+    margin-left: 55px;
 }
 
 .data-clients-container tbody tr td:nth-child(4) {
-    margin-left: 18px;
+    margin-left: 20px;
 }
 
 .data-clients-container tbody tr td:nth-child(5) {
@@ -47,4 +46,20 @@
     margin-left: 45px;
 }
 
+.data-clients-container tbody tr td:nth-child(7) {
+    margin-left: 80px;
+    width: 15px;
+}
+
+.data-clients-container tbody tr td:nth-child(8) {
+    margin-left: 2px;
+    width: 15px;
+}
+
+.user-icons {
+    width: 1.15em;
+    height: 1.15em;
+    color: var(--gula-red);
+    cursor: pointer;
+}
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "../styles/data-clients.css";
-import { MdDelete } from "react-icons/md";
-import { AiFillEdit } from "react-icons/ai";
+import { AiOutlineEdit } from "react-icons/ai";
+import { AiOutlineDelete } from "react-icons/ai";
 
 function DataClients({conditional}) {
   let [users, setUsers] = useState([]);
@@ -31,8 +31,8 @@ function DataClients({conditional}) {
               <td>{ user.address }</td>
               <td>{ new Date(user.birthdate).toLocaleDateString('en-US')}</td>
               <td>{ user.phone }</td>
-              {/* <td><AiFillEdit /></td>
-              <td><MdDelete /></td> */}
+              <td><AiOutlineEdit className="user-icons"/></td>
+              <td><AiOutlineDelete className="user-icons"/></td>
             </tr>
           ))}
         </tbody>

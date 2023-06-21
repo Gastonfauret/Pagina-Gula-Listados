@@ -6,7 +6,8 @@ import DataColumns from "./components/Data-columns.jsx";
 import AddButton from "./components/Add-button.jsx";
 import "./styles/main.css";
 import DataClients from "./components/Data-clients.jsx";
-import { useState } from "react";
+import Footer from "./components/Footer.jsx";
+import SignOff from "./components/Sign-off.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -17,5 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <AddButton />
     </div>
     <DataClients conditional={true}/>
+    <SignOff />
+    <Footer />
   </React.StrictMode>
 );
