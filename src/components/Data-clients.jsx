@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import "../styles/data-clients.css";
+import { MdDelete } from "react-icons/md";
+import { AiFillEdit } from "react-icons/ai";
 
-function DataClients() {
+function DataClients({conditional}) {
   let [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -18,7 +20,7 @@ function DataClients() {
 
   return (
     <>
-    {true &&
+    {conditional &&
       <table className="data-clients-container">
         <tbody>
           {users.map((user) => (
@@ -29,6 +31,8 @@ function DataClients() {
               <td>{ user.address }</td>
               <td>{ new Date(user.birthdate).toLocaleDateString('en-US')}</td>
               <td>{ user.phone }</td>
+              {/* <td><AiFillEdit /></td>
+              <td><MdDelete /></td> */}
             </tr>
           ))}
         </tbody>
