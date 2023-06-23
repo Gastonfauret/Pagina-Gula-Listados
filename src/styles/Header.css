@@ -14,7 +14,7 @@ body {
 }
 
 .header-container {
-    width: 80em;
+    width: 90em;
     height: 6em;
     background-color: var(--gula-red);
     border-radius: 3px;

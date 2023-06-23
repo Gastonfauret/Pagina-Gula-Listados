@@ -1,9 +1,6 @@
 .add-users-container {
-    display: flex;
-    margin-top: -2em;
-    margin-left: 35px;
-}
-
-.prueba {
-    display: none;
-}
+   display: flex;
+   width: 70em;
+   height: 60px;
+   margin-left: 162px;
+   }

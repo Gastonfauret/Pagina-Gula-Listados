@@ -1,8 +1,3 @@
-.data-clients-container {
-    display: flex;
-    width: 80em;
-    justify-content: center;
-}
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -23,11 +18,16 @@
     background: #555; 
   }
 
+.data-clients-container {
+    display: flex;
+    width: 90em;
+    justify-content: center;
+}
+
 .data-clients-container tbody{
-    width: 82%;
+    width: 70em;
     height: 65vh;
     gap: 15px;
-    margin-left: 35px;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
@@ -45,30 +45,30 @@
 }
 
 .data-clients-container tbody tr td:nth-child(2) {
-    margin-left: 63px;
+    margin-left: 83px;
 }
 
 .data-clients-container tbody tr td:nth-child(3) {
-    margin-left: 55px;
+    margin-left: 78px;
 }
 
 .data-clients-container tbody tr td:nth-child(4) {
-    margin-left: 20px;
+    margin-left: 42px;
 }
 
 .data-clients-container tbody tr td:nth-child(5) {
-    margin-left: 68px;
+    margin-left: 90px;
 }
 
 .data-clients-container tbody tr td:nth-child(6) {
     width: 190px;
     display: flex;
     justify-content: end;
-    margin-left: 45px;
+    margin-left: 65px;
 }
 
 .data-clients-container tbody tr td:nth-child(7) {
-    margin-left: 80px;
+    margin-left: 53px;
     width: 15px;
 }
 
