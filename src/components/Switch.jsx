@@ -1,19 +1,14 @@
 import React, { useState } from "react";
 import "./../styles/Switch.css";
+import { Link } from "react-router-dom";
 
-function Switch({ onClick }) {
-  let [stateClientSwitch, setStateClientSwitch] = useState(true);
-
-  const switchState = () => {
-    setStateClientSwitch(!stateClientSwitch);
-
-  };
+function Switch() {
   
   return (
     <div className="switch-container">
-      <p onClick={onClick}>Clientes</p>
+      <p><Link to="/clientes">Clientes</Link></p>
       <p>|</p>
-      <p>Proveedores</p>
+      <p><Link to="/proveedores">Proveedores</Link></p>
     </div>
   );
 }

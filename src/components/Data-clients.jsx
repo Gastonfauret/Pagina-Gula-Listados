@@ -13,14 +13,17 @@ function DataClients({conditional}) {
 
   const getUsers = () => {
     fetch("https://649115f02f2c7ee6c2c7b868.mockapi.io/clients")
-      .then((response) => response.json())
+      .then((response) => {
+        if(!response.ok) throw new Error('Request error');
+        return response.json()
+      })
       .then((data) => {
         setUsers(data);
-      });
+      })
+      .catch((err) => console.error(err));
   };
   return (
     <> 
-    {conditional &&
       <table className="data-clients-container">
         <tbody>
           {users.map((user) => (
@@ -37,7 +40,6 @@ function DataClients({conditional}) {
           ))}
         </tbody>
       </table>
-        }
     </>
   );
 }
