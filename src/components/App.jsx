@@ -7,12 +7,12 @@ function App() {
     <>
       <div>
         <Routes>
-          <Route exact path="/clientes" element={<Clientes />} />
+          <Route exact path="/" element={<Clientes />} />
           <Route exact path="/proveedores" element={<Proveedores />} />
         </Routes>
       </div>
     </>
-  );
+  )
 }
 
 export default App;

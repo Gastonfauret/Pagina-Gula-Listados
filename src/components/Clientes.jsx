@@ -20,7 +20,7 @@ function Clientes() {
         <SignOff />
         <Footer />
     </>
-  );
+  )
 }
 
 export default Clientes;

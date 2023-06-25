@@ -41,6 +41,6 @@ function DataClients({conditional}) {
         </tbody>
       </table>
     </>
-  );
+  )
 }
 export default DataClients;

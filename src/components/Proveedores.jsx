@@ -12,7 +12,7 @@ function Proveedores() {
       <SignOff />
       <Footer />
     </>
-  );
+  )
 }
 
 export default Proveedores;

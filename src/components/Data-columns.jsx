@@ -15,7 +15,7 @@ function DataColumns() {
         </ul>
       </div>
     </>
-  );
+  )
 }
 
 export default DataColumns;
