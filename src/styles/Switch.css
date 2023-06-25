@@ -4,13 +4,11 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    color: rgba(81, 81, 81, 0.496);
     user-select: none;
     font-weight: bold;
     font-size: 0.95rem;
     letter-spacing: 1px;
     height: 50px;
-    margin-left: 20px;
 }
 
 .switch-container :nth-child(2) {
@@ -23,10 +21,11 @@
 .switch-container :nth-child(1),
 .switch-container :nth-child(3) {
     cursor: pointer;
-
+    text-decoration: none;
+    color: rgba(81, 81, 81, 0.496);
 }
 
 .switch-container :nth-child(1):hover,
 .switch-container :nth-child(3):hover {
-    color: black;
+    color: rgba(17, 17, 17, 0.75);
 }
