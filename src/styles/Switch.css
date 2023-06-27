@@ -1,5 +1,5 @@
 .switch-container {
-    margin-top: 10px;
+    margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,7 +8,7 @@
     font-weight: bold;
     font-size: 0.95rem;
     letter-spacing: 1px;
-    height: 50px;
+    height: 30px;
 }
 
 .switch-container :nth-child(2) {

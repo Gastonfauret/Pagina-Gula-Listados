@@ -17,35 +17,36 @@
     list-style: none;
     display: flex;
     padding: 0;
-    border-bottom: 3px solid rgba(237, 28, 35, 0.166);
+    margin-bottom: 12px;
     justify-content: space-between;
     color: var(--gula-red);
     font-weight: bolder;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
 .clients-data-columns li{
     width: 90px;
+    border-bottom: 3px solid rgba(237, 28, 35, 0.166);
 }
 
 .clients-data-columns li:nth-child(2) {
-    margin-left: 83px;
+    padding-left: 83px;
 }
 
 .clients-data-columns li:nth-child(3) {
-    margin-left: 78px;
+    padding-left: 78px;
 }
 
 .clients-data-columns li:nth-child(4) {
-    margin-left: 45px;
+    padding-left: 45px;
 }
 
 .clients-data-columns li:nth-child(5) {
-    margin-left: 93px;
-    width: 190px;
+    padding-left: 93px;
+    width: 210px;
 }
 
 .clients-data-columns li:nth-child(6) {
-    margin-left: 87px;
-    width: 70px;
+    padding-left: 60px;
+    width: 76px;
 }

@@ -14,7 +14,7 @@ function Clientes() {
       <Switch />
       <div className="add-users-container">
           <DataColumns />
-          <AddButton />
+          <AddButton className="add-button"/>
         </div>
         <DataClients />
         <SignOff />

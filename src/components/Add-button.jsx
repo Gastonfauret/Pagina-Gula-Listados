@@ -1,12 +1,15 @@
 import { AiFillPlusCircle } from "react-icons/ai";
-import "../styles/Add-button.css"
+import Modal from "./Modal";
+import "../styles/Add-button.css";
 
-function AddButton() {
-    return (
-        <div className="button-container">
-            <AiFillPlusCircle  className="add-button"/>
-        </div>
-    )
+function AddButton({className}) {
+  return (
+    <>
+      <div className="button-container">
+        <AiFillPlusCircle className={className} />
+      </div>
+    </>
+  );
 }
 
 export default AddButton;

@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import "../styles/data-clients.css";
 import { AiOutlineEdit } from "react-icons/ai";
 import { AiOutlineDelete } from "react-icons/ai";
+import requestError from "../assets/error.png";
 
-function DataClients({conditional}) {
+function DataClients() {
   const [users, setUsers] = useState([]);
-
+  const [err, setErr] = useState(false);
 
   useEffect(() => {
     getUsers();
@@ -14,33 +15,45 @@ function DataClients({conditional}) {
   const getUsers = () => {
     fetch("https://649115f02f2c7ee6c2c7b868.mockapi.io/clients")
       .then((response) => {
-        if(!response.ok) throw new Error('Request error');
-        return response.json()
+        if (!response.ok) throw new Error("Request error");
+        return response.json();
       })
-      .then((data) => {
-        setUsers(data);
-      })
-      .catch((err) => console.error(err));
+      .then((data) => setUsers(data))
+      .catch((err) => setErr(true));
   };
+
+  if (err)
+    return (
+      <>
+      <div className="data-clients-container">
+        <img src={requestError} className="fix-img-error"/>
+      </div>
+      </>
+    );
+
   return (
-    <> 
+    <>
       <table className="data-clients-container">
         <tbody>
           {users.map((user) => (
             <tr key={user.id}>
-              <td>{ user.lastName }</td>
-              <td>{ user.name }</td>
-              <td>{ user.dni }</td>
-              <td>{ user.address }</td>
-              <td>{ new Date(user.birthdate).toLocaleDateString('en-US')}</td>
-              <td>{ user.phone }</td>
-              <td><AiOutlineEdit className="user-icons"/></td>
-              <td><AiOutlineDelete className="user-icons"/></td>
+              <td>{user.lastName}</td>
+              <td>{user.name}</td>
+              <td>{user.dni}</td>
+              <td>{user.address}</td>
+              <td>{new Date(user.birthdate).toLocaleDateString("en-US")}</td>
+              <td>{user.phone}</td>
+              <td>
+                <AiOutlineEdit className="user-icons" />
+              </td>
+              <td>
+                <AiOutlineDelete className="user-icons" />
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
     </>
-  )
+  );
 }
 export default DataClients;

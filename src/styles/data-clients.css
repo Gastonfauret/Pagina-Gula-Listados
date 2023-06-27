@@ -1,22 +1,4 @@
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--gula-red); 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+
 
 .data-clients-container {
     display: flex;
@@ -27,7 +9,7 @@
 .data-clients-container tbody{
     width: 70em;
     height: 65vh;
-    gap: 15px;
+    gap: 10px;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
@@ -35,8 +17,7 @@
 
 .data-clients-container tbody tr {
     display: flex;
-    padding-bottom: 4px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    padding-bottom: 1px;
     align-items: center;
 }
 
@@ -73,7 +54,7 @@
 }
 
 .data-clients-container tbody tr td:nth-child(8) {
-    margin-left: 2px;
+    margin-left: 4px;
     width: 15px;
 }
 
@@ -84,3 +65,10 @@
     cursor: pointer;
 }
 
+.data-clients-container img {
+    width: 70em;
+}
+
+.fix-img-error {
+    margin-top: -60px;
+}

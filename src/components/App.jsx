@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Clientes from "./Clientes";
-import Proveedores from "./Proveedores";
+import Providers from "./Providers";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <div>
         <Routes>
           <Route exact path="/" element={<Clientes />} />
-          <Route exact path="/proveedores" element={<Proveedores />} />
+          <Route exact path="/proveedores" element={<Providers />} />
         </Routes>
       </div>
     </>

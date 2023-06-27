@@ -22,11 +22,31 @@ body {
     position: relative;
     align-items: center;
     justify-content: center;
-    position: relative;
+}
+
+.header-container ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.header-container ul li {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: .95rem;
+    cursor: pointer;
 }
 
 img {
+    margin-left: 15px;
+}
+
+img:first-child {
     width: 6em;
+    position: absolute;
+    left: 50px;
 }
 
 .user-profile {
@@ -37,7 +57,6 @@ img {
 .user-container {
     display: flex;    
     align-items: center;
-    gap: 0.5em;
     margin-right: 1em;
     position: absolute;
     right: 0;
@@ -47,8 +66,7 @@ img {
 }
 
 .user {
-    font-size: 12px;
+    font-size: 14px;
     color: white;
-    font-weight: 100;
+    font-weight: 600;
 }
-
