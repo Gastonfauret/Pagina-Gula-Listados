@@ -1,0 +1,35 @@
+@media(min-width:320px){
+
+    .cont{
+        width: 320px;
+        height: 500px;
+        border: 1px solid black;
+        border-radius: 25px;
+        overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+.cont-data-clientes{
+    width: 100%;
+    border-collapse:collapse;
+    border-radius: 5px;
+}
+
+.cont-data-clientes td, .cont-data-clientes th{
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+.cont-data-clientes th {
+    background-color: #f2f2f2;
+    color:rgb(237,28 ,36);
+    border-bottom: 1px solid rgb(237,28 ,36);
+}
+.cont-data-clientes tr:hover{
+    background-color: #f5f5f5;
+}
+}
+
+

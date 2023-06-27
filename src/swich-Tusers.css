@@ -1,0 +1,31 @@
+@font-face{
+    font-family: 'Arial-rounded';
+    src:url('./assets/fonts/Arial\ Rounded\ Font.ttf')
+}
+*{
+    font-family: 'Arial-rounded';
+}
+body{
+    background-color: antiquewhite;
+    width: 320px;
+    height: 650px;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+section{
+    display: flex;
+    justify-content: center;
+}
+.A-cliente, .A-prov{
+    color: black;
+}
+
+.A-cliente{
+    margin-right: 3px;
+}
+.A-prov{
+    margin-left: 3px;
+}
+/* ****************** */    
+/* hover */
+
