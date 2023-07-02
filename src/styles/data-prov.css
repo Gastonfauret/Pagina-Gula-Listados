@@ -4,7 +4,6 @@
     flex-direction: column;
     align-items: center;
     margin-top: 17px;
-
 }
 
 .data-prov-container thead,
@@ -76,5 +75,9 @@
 
 .data-prov-container tbody tr td:nth-child(8) {
     margin-left: 53px;
+}
+
+.add-button-containter {
+    display: flex;
 }
 

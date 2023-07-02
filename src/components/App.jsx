@@ -5,13 +5,11 @@ import Providers from "./Providers";
 function App() {
   return (
     <>
-      <div>
         <Routes>
           <Route exact path="/" element={<Clientes />} />
           <Route exact path="/proveedores" element={<Providers />} />
         </Routes>
-      </div>
-    </>
+      </>
   )
 }
 

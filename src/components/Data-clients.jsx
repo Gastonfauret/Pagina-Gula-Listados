@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import "../styles/data-clients.css";
 import { AiOutlineEdit } from "react-icons/ai";
 import { AiOutlineDelete } from "react-icons/ai";
 import requestError from "../assets/error.png";
+import Modd from "./Modd";
+import "../styles/data-clients.css";
 
 function DataClients() {
   const [users, setUsers] = useState([]);
@@ -25,15 +26,27 @@ function DataClients() {
   if (err)
     return (
       <>
-      <div className="data-clients-container">
-        <img src={requestError} className="fix-img-error"/>
-      </div>
+        <div className="data-clients-container">
+          <img src={requestError} className="fix-img-error" />
+        </div>
       </>
     );
 
   return (
     <>
+    <div className="add-button-containter">
       <table className="data-clients-container">
+        <thead>
+          <tr>
+            <th>Apellido</th>
+            <th>Nombre</th>
+            <th>Dni</th>
+            <th>Direccion</th>
+            <th>Fecha de nac.</th>
+            <th>Telefono</th>
+            
+          </tr>
+        </thead>
         <tbody>
           {users.map((user) => (
             <tr key={user.id}>
@@ -53,6 +66,8 @@ function DataClients() {
           ))}
         </tbody>
       </table>
+      <Modd />
+      </div>
     </>
   );
 }
