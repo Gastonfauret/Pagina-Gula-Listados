@@ -34,7 +34,7 @@ function DataProv() {
 
   return (
     <>
-      <div className="add-button-containter">
+      <div className="add-button-container">
         <table className="data-prov-container">
           <thead>
             <tr>
