@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useHandleReloadContext } from "./SwitchProvider";
 
 function ClientsForm() {
   const [customer, setCustomer] = useState({
@@ -10,6 +11,8 @@ function ClientsForm() {
     birthdate: "",
     phone: "",
   });
+
+  const handleReload = useHandleReloadContext();
 
   const handleChanges = (e) => {
     setCustomer((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -24,6 +27,7 @@ function ClientsForm() {
     })
       .then((response) => {
         if (!response.ok) console.error("Required error " + response.status);
+        handleReload();
         return response.json();
       })
       .catch((err) => console.error(err));

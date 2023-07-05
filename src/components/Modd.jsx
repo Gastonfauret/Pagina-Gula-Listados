@@ -3,8 +3,9 @@ import { Dialog } from "@mui/material";
 import { useState } from "react";
 import { AiFillPlusCircle } from "react-icons/ai";
 import ClientsForm from "./clients-form";
-import "../styles/modd.css";
 import { useSwitchContext } from "./SwitchProvider";
+import ProvForm from "./Prov-form";
+import "../styles/modd.css";
 
 
 function Modd() {
@@ -19,7 +20,7 @@ function Modd() {
       <AiFillPlusCircle className="add-button" onClick={handleOpen} />
       <Dialog open={open} onClose={handleClose} className="modal">
         {switchState && <ClientsForm />}
-        {/* {!switchState && <ProvForm />} */}
+        {!switchState && <ProvForm />}
       </Dialog>
     </>
   );

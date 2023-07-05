@@ -1,9 +1,21 @@
 import React from "react";
 import { useState, useContext } from "react";
 
-const switchContext = React.createContext();
-const switchToggleTrue = React.createContext();
-const switchToggleFalse = React.createContext();
+// Primero creamos el nuevo contexto
+const switchContext = React.createContext(); //Para la variable switchState
+const switchToggleTrue = React.createContext(); //Para la funcion switchTrue
+const switchToggleFalse = React.createContext(); //Para la funcion switchFalse
+const reloadContext = React.createContext(); //Para recargar componentes
+const handleReloadContext = React.createContext(); //Para la funcion handleReload
+
+//Exportamos los contextos para usarlos en otros componentes
+export const useReloadContext = () => {
+  return useContext(reloadContext);
+};
+
+export const useHandleReloadContext = () => {
+  return useContext(handleReloadContext);
+};
 
 export const useSwitchContext = () => {
   return useContext(switchContext);
@@ -18,7 +30,8 @@ export const useSwitchToggleFalse = () => {
 };
 
 function SwitchProvider({ children }) {
-    const [switchState, setSwitchState] = useState(true);
+  const [switchState, setSwitchState] = useState(true);
+  const [reload, setReload] = useState(0);
 
   const switchTrue = () => {
     setSwitchState(true);
@@ -26,15 +39,22 @@ function SwitchProvider({ children }) {
   const switchFalse = () => {
     setSwitchState(false);
   };
+  const handleReload = () => {
+    setReload(reload + 1);
+  };
 
   return (
-    <switchContext.Provider value={switchState}>
-      <switchToggleTrue.Provider value={switchTrue}>
-        <switchToggleFalse.Provider value={switchFalse}>
-          {children}
-        </switchToggleFalse.Provider>
-      </switchToggleTrue.Provider>
-    </switchContext.Provider>
+    <reloadContext.Provider value={reload}>
+        <handleReloadContext.Provider value={handleReload}>
+          <switchContext.Provider value={switchState}>
+            <switchToggleTrue.Provider value={switchTrue}>
+              <switchToggleFalse.Provider value={switchFalse}>
+                {children}
+              </switchToggleFalse.Provider>
+            </switchToggleTrue.Provider>
+          </switchContext.Provider>
+        </handleReloadContext.Provider>
+    </reloadContext.Provider>
   );
 }
 

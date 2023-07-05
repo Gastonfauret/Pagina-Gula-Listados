@@ -6,14 +6,14 @@ import SwitchProvider from "./SwitchProvider";
 function App() {
   return (
     <>
-        <SwitchProvider>
+      <SwitchProvider>
         <Routes>
           <Route exact path="/" element={<Clientes />} />
           <Route exact path="/proveedores" element={<Providers />} />
         </Routes>
-        </SwitchProvider>
-      </>
-  )
+      </SwitchProvider>
+    </>
+  );
 }
 
 export default App;

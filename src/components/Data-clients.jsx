@@ -1,18 +1,21 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { AiOutlineDelete } from "react-icons/ai";
 import { Dialog } from "@mui/material";
 import requestError from "../assets/error.png";
 import Modd from "./Modd";
+import { useReloadContext, useHandleReloadContext } from "./SwitchProvider";
 import "../styles/data-clients.css";
 
 function DataClients() {
   const [users, setUsers] = useState([]);
   const [err, setErr] = useState(false);
-  const [reload, setReload] = useState(0);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const reload = useReloadContext();
+  const handleReload = useHandleReloadContext();
 
   const templateUser = {
     lastName: "",
@@ -40,6 +43,17 @@ function DataClients() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    fetch(`https://649115f02f2c7ee6c2c7b868.mockapi.io/clients/${currentUser.id}`, {
+      method: "PUT",
+      headers: {"Content-Type" : "application/json"},
+      body: JSON.stringify(currentUser)
+    })
+    .then(response => {
+      if(!response.ok) console.error("Request error" + response.state)
+      handleReload();
+      return response.json();
+    })
+    .catch((error) => console.error(error));
   };
 
   const deleteUser = (user) => {
@@ -48,7 +62,7 @@ function DataClients() {
     })
       .then((response) => {
         if (!response.ok) console.error("Request error" + response.status);
-        setReload(reload + 1);
+        handleReload();
         return response.json();
       })
       .catch((error) => console.error(error));
@@ -96,89 +110,89 @@ function DataClients() {
                 <td>{user.address}</td>
                 <td>{new Date(user.birthdate).toLocaleDateString("en-US")}</td>
                 <td>{user.phone}</td>
+                  <td>
+                    <AiOutlineEdit
+                      className="user-icons"
+                      onClick={() => selectUser(user)}
+                    />
+                  </td>
                 <td>
-                  <AiOutlineEdit
-                    className="user-icons"
-                    onClick={() => selectUser(user)}
-                  />
-                  {/* Modal para editar cada usuario */}
-                  <Dialog
-                    open={open}
-                    onSubmit={handleSubmit}
-                    onClose={handleClose}
-                    className="modal"
-                  >
-                    <form action="" >
-                      <label htmlFor="lastName">Apellido </label>
-                      <input
-                        type="text"
-                        name="lastName"
-                        id="lastName"
-                        required
-                        value={currentUser.lastName}
-                        onChange={handleChange}
-                      />
-                      <label htmlFor="name">Nombre </label>
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        required
-                        value={currentUser.name}
-                        onChange={handleChange}
-                      />
-                      <label htmlFor="dni">Dni </label>
-                      <input
-                        type="text"
-                        name="dni"
-                        id="dni"
-                        required
-                        value={currentUser.dni}
-                        onChange={handleChange}
-                      />
-                      <label htmlFor="address">Direccion </label>
-                      <input
-                        type="text"
-                        name="address"
-                        id="address"
-                        required
-                        value={currentUser.address}
-                        onChange={handleChange}
-                      />
-                      <label htmlFor="birthdate">Fecha de nacimiento </label>
-                      <input
-                        type="text"
-                        name="birthdate"
-                        id="birthdate"
-                        required
-                        value={currentUser.birthdate}
-                        onChange={handleChange}
-                      />
-                      <label htmlFor="phone">Telefono </label>
-                      <input
-                        type="text"
-                        name="phone"
-                        id="phone"
-                        required
-                        value={currentUser.phone}
-                        onChange={handleChange}
-                      />
-                      <div className="modal-button__container">
-                        <input type="submit" value="Editar" />
-                      </div>
-                    </form>
-                  </Dialog>
-                </td>
-                <td>
-                  <AiOutlineDelete
-                    className="user-icons"
-                    onClick={() => deleteUser(user.id)}
-                  />
-                </td>
+                    <AiOutlineDelete
+                      className="user-icons"
+                      onClick={() => deleteUser(user.id)}
+                    />
+                  </td>
               </tr>
             ))}
           </tbody>
         </table>
+        {/* Modal para editar cada usuario */}
+        <Dialog
+          open={open}
+          onSubmit={handleSubmit}
+          onClose={handleClose}
+          className="modal"
+        >
+          <form action="">
+            <label htmlFor="lastName">Apellido </label>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              required
+              value={currentUser.lastName}
+              onChange={handleChange}
+            />
+            <label htmlFor="name">Nombre </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              value={currentUser.name}
+              onChange={handleChange}
+            />
+            <label htmlFor="dni">Dni </label>
+            <input
+              type="text"
+              name="dni"
+              id="dni"
+              required
+              value={currentUser.dni}
+              onChange={handleChange}
+            />
+            <label htmlFor="address">Direccion </label>
+            <input
+              type="text"
+              name="address"
+              id="address"
+              required
+              value={currentUser.address}
+              onChange={handleChange}
+            />
+            <label htmlFor="birthdate">Fecha de nacimiento </label>
+            <input
+              type="text"
+              name="birthdate"
+              id="birthdate"
+              required
+              value={currentUser.birthdate}
+              onChange={handleChange}
+            />
+            <label htmlFor="phone">Telefono </label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              required
+              value={currentUser.phone}
+              onChange={handleChange}
+            />
+            <div className="modal-button__container">
+              <input type="submit" value="Editar" />
+            </div>
+          </form>
+        </Dialog>
         <Modd />
       </div>
     </>
