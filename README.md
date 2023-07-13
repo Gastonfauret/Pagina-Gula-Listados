@@ -16,7 +16,7 @@ Dependencias necesarias a instalar para el uso de la App.
 
 -React-router-dom 6.14.1
 
-Una vez instalada la dependencia NodeJs se descargan automáticamente todas las dependencias necesarias que utiliza el programa.
+Una vez instalada la dependencia NodeJs se descargan automáticamente todas las dependencias necesarias que utiliza el programa con el comando npm install.
 
 La App cuenta con un “Componente” llamado Main el cual es el encargado de crear un  Root  donde se renderiza el componente App. Por tanto en el archivo Main se pueden encontrar cuatro importaciones a saber: 
 React :  framework que contendrá todos las dependencias a utilizar
