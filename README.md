@@ -1,21 +1,20 @@
 Dependencias necesarias a instalar para el uso de la App.
 
-NodeJs version 18.16.0
+-NodeJs version 18.16.0
 
-Npm 
+-Npm 
 
-React version 18.2.0
+-React version 18.2.0
 
-Vite version 4.3.9
+-Vite version 4.3.9
 
-Material UI 5.13.7
+-Material UI 5.13.7
 
-React-icons 4.10.1
+-React-icons 4.10.1
 
-Emailjs 3.11.0
+-Emailjs 3.11.0
 
-React-router-dom 6.14.1
-
+-React-router-dom 6.14.1
 
 Una vez instalada la dependencia NodeJs se descargan automáticamente todas las dependencias necesarias que utiliza el programa.
 
