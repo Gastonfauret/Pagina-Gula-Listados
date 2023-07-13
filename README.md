@@ -18,9 +18,9 @@ Dependencias necesarias a instalar para el uso de la App.
 
 Una vez instalada la dependencia NodeJs se descargan automáticamente todas las dependencias necesarias que utiliza el programa con el comando npm install.
 
-La App cuenta con un “Componente” llamado Main el cual es el encargado de crear un  Root  donde se renderiza el componente App. Por tanto en el archivo Main se pueden encontrar cuatro importaciones a saber: 
+La App cuenta con un “Componente” llamado Main el cual es el encargado de crear un  Root  donde se renderiza el componente App. Por tanto en el archivo Main se pueden encontrar cuatro importaciones: 
 React :  framework que contendrá todos las dependencias a utilizar
- ReactDOM:  encargado de renderizar cada componente
+ReactDOM:  encargado de renderizar cada componente
 BrowserRouter: encargado de hacer el enrutamiento entre los componentes principales de la App.
 App: (componente) contendrá el ruteo de todos los componentes principales de la App a saber: Login, Inicio, listados, Nosotros y contacto.
 
@@ -29,7 +29,6 @@ Componente App:
 	Dentro del mismo se puede observar las rutas para acceder a cada uno de ellos.
 
 Al iniciar el script se accede por defecto a la pantalla Login (componente) en el cual se hará uso del hooks useState importado de React que permite realizar cambios de estados en variables según se necesite,además de dos componentes secundarios uno llamado slogan y otro llamado VerticalDivider el cual devuelve una visual de una línea vertical.
-
 
 Dentro del componente login se define una función que lo representa. Dentro de la misma se establece el color de fondo del body y se utiliza el hook useState para manejar los estados de las constantes email y password. También se definen las funciones ValidationUser y ValidationPassword que verificarán la longitud y el formato de email y password. Estas funciones devolverán un mensaje de error si los valores ingresados en los campos de entradas no cumplen con ciertas condiciones. 
 Este componente retornara la visual de un formulario de inicio de sesión con dos campos de entrada: email y password. Los valores ingresados en los mismos se actualizarán en tiempo real mediante el uso de evento onChange. 
